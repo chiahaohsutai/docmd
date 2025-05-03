@@ -1,7 +1,7 @@
 {
-  "name": "text-vision",
+  "name": "docmd",
   "version": "1.0.0",
-  "description": "Pdf parsing using multimodal models",
+  "description": "Document parsing using multimodal models",
   "scripts": {
     "build": "tsc",
     "start": "node ./dist/app.js",
