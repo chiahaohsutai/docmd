@@ -1,13 +1,16 @@
-import express from 'express'
+import CSSMatrix from "dommatrix";
+import express from "express";
+import { default as fileRouter } from "./routes/file.routes";
 
-const app = express()
+global.DOMMatrix = CSSMatrix;
 
-app.use(express.json())
+const app = express();
+const port = 3000;
 
-app.get('/', (_, res) => {
-  res.send('Hello World!')
-})
+app.use(express.json());
 
-app.listen('3000', () => {
-  console.log('Server running on port 3000')
-})
+app.use("/files", fileRouter);
+
+app.listen(port, async () => {
+	console.log(`App listening on port ${port}`);
+});

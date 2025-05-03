@@ -8,6 +8,7 @@
     "fmt": "npx @biomejs/biome format --write ./src",
     "lint": "npx @biomejs/biome lint --write ./src",
     "dev": "nodemon --watch \"*.ts\" --exec \"ts-node\" ./src/app.ts",
+    "check": "npx @biomejs/biome check --write ./src",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Chia Hao Hsu Tai",
@@ -26,6 +27,7 @@
     "express": "^5.1.0",
     "pdfjs-dist": "^5.2.133",
     "unpdf": "^1.0.2",
-    "zod": "^3.24.3"
+    "zod": "^3.24.3",
+    "zod-validation-error": "^3.4.0"
   }
 }
