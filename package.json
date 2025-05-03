@@ -5,17 +5,18 @@
   "scripts": {
     "build": "tsc",
     "start": "node ./dist/app.js",
-    "fmt": "npx @biomejs/biome format --write ./src",
-    "lint": "npx @biomejs/biome lint --write ./src",
+    "fmt": "npx @biomejs/biome format --write ./src && npx @biomejs/biome format --write ./test",
+    "lint": "npx @biomejs/biome lint --write ./src && npx @biomejs/biome lint --write ./test",
     "dev": "nodemon --watch \"*.ts\" --exec \"ts-node\" ./src/app.ts",
-    "check": "npx @biomejs/biome check --write ./src",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "check": "npx @biomejs/biome check --write ./src && npx @biomejs/biome check --write ./test",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
   "author": "Chia Hao Hsu Tai",
   "license": "MIT",
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
     "@types/express": "^5.0.1",
+    "@types/jest": "^29.5.14",
     "@types/node": "^22.15.3",
     "nodemon": "^3.1.10",
     "ts-node": "^10.9.2",
@@ -25,6 +26,8 @@
     "@napi-rs/canvas": "^0.1.70",
     "dommatrix": "^0.1.1",
     "express": "^5.1.0",
+    "nanoid": "^5.1.5",
+    "ollama": "^0.5.15",
     "pdfjs-dist": "^5.2.133",
     "unpdf": "^1.0.2",
     "zod": "^3.24.3",
